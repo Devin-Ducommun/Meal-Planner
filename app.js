@@ -5,9 +5,12 @@ let weekPlan = ["", "", "", "", "", "", ""]; // Sunday to Saturday
 window.onload = function () {
     if (localStorage.getItem('mealCache')) {
         mealCache = JSON.parse(localStorage.getItem('mealCache'));
-        displayMealCache();
+        console.log("Meal cache loaded:", mealCache); // Debugging log
+        displayMealCache();  // Display the cache if data exists
+    } else {
+        console.log("No mealCache found in localStorage"); // Debugging log
     }
-}
+};
 
 // Function to add a meal to the cache
 function addMealToCache(mealName) {
@@ -15,6 +18,7 @@ function addMealToCache(mealName) {
         mealCache.push(mealName);
         displayMealCache();
         saveMealCache(); // Save to localStorage after adding a meal
+        console.log("Meal added to cache:", mealCache); // Debugging log
         document.getElementById('meal-name').value = ""; // Clear input after adding
     }
 }
@@ -39,11 +43,13 @@ function removeMealFromCache(index) {
     mealCache.splice(index, 1); // Remove meal at the given index
     displayMealCache(); // Update the meal cache display
     saveMealCache(); // Save the updated cache to localStorage
+    console.log("Meal removed, updated cache:", mealCache); // Debugging log
 }
 
 // Function to save meal cache to localStorage
 function saveMealCache() {
     localStorage.setItem('mealCache', JSON.stringify(mealCache));
+    console.log("Meal cache saved to localStorage:", mealCache); // Debugging log
 }
 
 // Function to shuffle the array (Fisher-Yates Shuffle Algorithm)
