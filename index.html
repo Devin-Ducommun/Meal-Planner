@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Weekly Meal Planner</h1>
+        </header>
+
+        <!-- Meal Input Section -->
+        <section class="meal-input">
+            <input type="text" id="meal-name" placeholder="Enter meal name">
+            <button class="btn" onclick="addMealToCache(document.getElementById('meal-name').value)">Add Meal to Cache</button>
+        </section>
+
+        <!-- Meal Cache Section -->
+        <section class="meal-cache">
+            <h2>Meal Cache</h2>
+            <ul id="meal-cache"></ul>
+        </section>
+
+        <!-- Plan Week Button -->
+        <section class="planner-button">
+            <button class="btn plan-btn" onclick="planMyWeek()">Plan my week</button>
+        </section>
+
+        <!-- Weekly Calendar Section -->
+        <section class="calendar">
+            <h2>Weekly Plan</h2>
+            <div class="calendar-grid">
+                <div class="day"><h3>Sunday</h3><p></p></div>
+                <div class="day"><h3>Monday</h3><p></p></div>
+                <div class="day"><h3>Tuesday</h3><p></p></div>
+                <div class="day"><h3>Wednesday</h3><p></p></div>
+                <div class="day"><h3>Thursday</h3><p></p></div>
+                <div class="day"><h3>Friday</h3><p></p></div>
+                <div class="day"><h3>Saturday</h3><p></p></div>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
